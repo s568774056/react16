@@ -4,9 +4,13 @@ require('./navigation.less');
 let Navigation = React.createClass({
     render() {
         return (
-        	<div className="row navigation">
-        		<h1 className="caption">xxxxxxxx</h1>
-        	</div>
+            <div>
+                <div className="row navigation">
+                    <h1 className="caption">{this.props.title}</h1>
+                </div>
+                <div className="row-navigation">
+                </div>
+            </div>
         );
     }
 });
