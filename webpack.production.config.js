@@ -54,7 +54,9 @@ module.exports = {
               loader: "babel-loader",
               query:
                 {
-                  presets:['react','es2015']
+                  presets:['react','es2015'],
+                    cacheDirectory: true,
+                    plugins: [["import", { libraryName: "antd", style: "css" }]]
                 }
             },
             {
@@ -72,3 +74,23 @@ module.exports = {
         ]
     }
 };
+/*
+
+"babel": {
+    "presets": [
+        "react",
+        "latest",
+        "stage-0"
+    ],
+        "plugins": [
+        "babel-plugin-transform-decorators-legacy",
+        "react-hot-loader/babel",
+        [
+            "import",
+            {
+                "libraryName": "antd",
+                "style": true
+            }
+        ]
+    ]
+},*/

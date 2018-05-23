@@ -6,9 +6,10 @@ let PubSub = require('pubsub-js');
 
 import Main from './page/main';
 
-import Apply from './page/apply';
+import Apply from './page/Apply';
 
 import Navigation from './components/navigation'
+
 
 
 let App = React.createClass({
