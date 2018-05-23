@@ -13,9 +13,6 @@ class App extends React.Component{
     render() {
         return (
             <div className="container">
-                {console.log(this.props)}
-                {console.log(this.props.children)}
-                {console.log(this.state)}
                 {React.cloneElement(this.props.children, this.state)}
             </div>
         );
