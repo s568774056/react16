@@ -1,16 +1,13 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
-import Root from './Root';
-
-render(
-    <AppContainer>
-        <Root />
-    </AppContainer>,
+import Route from './route';
+import 'babel-polyfill';
+import ReactDOM from 'react-dom';
+ReactDOM.render(
+        <Route />,
     document.getElementById('root')
 );
 
-if (module.hot) {
+/*if (module.hot) {
     module.hot.accept('./Root', () => {
         const NewRoot = require('./Root').default;
         render(
@@ -20,4 +17,4 @@ if (module.hot) {
             document.getElementById('root')
         );
     });
-}
+}*/

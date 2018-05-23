@@ -1,14 +1,13 @@
 import React from 'react';
 
-let Apply = React.createClass({
+ class Apply extends React.Component{
     render() {
-
         return (
-            <ul>
+           <div>
 
-            </ul>
+           </div>
         );
     }
-});
+}
 
 export default Apply ;

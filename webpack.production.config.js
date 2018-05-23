@@ -55,6 +55,7 @@ module.exports = {
               query:
                 {
                   presets:['react','es2015'],
+                    //antd按需引入 缺少会造成样式缺失
                     cacheDirectory: true,
                     plugins: [["import", { libraryName: "antd", style: "css" }]]
                 }

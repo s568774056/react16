@@ -1,7 +1,7 @@
 import React from 'react';
 require('./navigation.less');
 
-let Navigation = React.createClass({
+ class Navigation extends React.Component{
     render() {
         return (
             <div>
@@ -13,6 +13,6 @@ let Navigation = React.createClass({
             </div>
         );
     }
-});
+}
 
 export default Navigation;
