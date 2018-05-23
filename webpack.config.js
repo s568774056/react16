@@ -5,9 +5,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devtool: 'eval-source-map',
     entry: [
-        'webpack-dev-server/client?http://localhost:3000',
+        'webpack-dev-server/client?http://localhost:8888',
         'webpack/hot/only-dev-server',
         'react-hot-loader/patch',
         path.join(__dirname, 'app/final/index.js')
@@ -16,6 +15,10 @@ module.exports = {
         path: path.join(__dirname, '/dist/'),
         filename: '[name].js',
         publicPath: '/'
+    },devServer: {
+        historyApiFallback: true,
+        host: '0.0.0.0',
+        disableHostCheck: true
     },
     plugins: [
         new HtmlWebpackPlugin({

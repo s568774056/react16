@@ -6,11 +6,11 @@ let PubSub = require('pubsub-js');
 
 import PlayerPage from './page/player';
 import listPage from './page/list';
-import Logo from './components/logo'
+import Navigation from './components/navigation'
 
 
 let App = React.createClass({
-	componentDidMount() {
+	componentDidMount() {//类似于dom ready
 		$("#player").jPlayer({
 			supplied: "mp3",
 			wmode: "window",
@@ -51,7 +51,7 @@ let App = React.createClass({
 			});
 		});
 	},
-	componentWillUnmount() {
+	componentWillUnmount() {//dom 销毁
 		PubSub.unsubscribe('PLAY_MUSIC');
 		PubSub.unsubscribe('DEL_MUSIC');
 		PubSub.unsubscribe('CHANAGE_REPEAT');
@@ -107,7 +107,7 @@ let App = React.createClass({
     render() {
         return (
             <div className="container">
-            	<Logo></Logo>
+            	<Navigation></Navigation>
             	{React.cloneElement(this.props.children, this.state)}
             </div>
         );

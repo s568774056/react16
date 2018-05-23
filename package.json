@@ -7,7 +7,8 @@
     "test": "",
     "start": "node server",
     "build": "webpack --config ./webpack.production.config.js --progress --profile --colors",
-    "eslint": "eslint ."
+    "eslint": "eslint .",
+    "dev": "webpack-dev-server --port 8888  --config ./webpack.production.config.js --progress --profile --colors"
   },
   "keywords": [
     "es6",
@@ -42,6 +43,7 @@
     "less-loader": "^2.2.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.0",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "react-bootstrap":"^0.32.1"
   }
 }

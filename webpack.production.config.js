@@ -12,14 +12,18 @@ module.exports = {
     // Where you want the output to go
     output: {
         path: path.join(__dirname, '/dist/'),
-        filename: '[name]-[hash].min.js',
+        filename: '[name].js',
         publicPath: '/'
+    },devServer: {
+        historyApiFallback: true,
+        host: '0.0.0.0',
+        disableHostCheck: true
     },
     plugins: [
         // webpack gives your modules and chunks ids to identify them. Webpack can vary the
         // distribution of the ids to get the smallest id length for often used ids with
         // this plugin
-        new webpack.optimize.OccurenceOrderPlugin(),
+//        new webpack.optimize.OccurenceOrderPlugin(),
 
         // handles creating an index.html file and injecting assets. necessary because assets
         // change name because the hash part changes. We want hash name changes to bust cache
@@ -30,12 +34,12 @@ module.exports = {
             filename: './index.html'
         }),
         // handles uglifying js
-        new webpack.optimize.UglifyJsPlugin({
+       /* new webpack.optimize.UglifyJsPlugin({
             compressor: {
                 warnings: false,
                 screw_ie8: true
             }
-        }),
+        }),*/
         // plugin for passing in data to the js, like what NODE_ENV we are in.
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
@@ -66,8 +70,5 @@ module.exports = {
                 loader: 'style-loader!css-loader!less-loader'
             }
         ]
-    },
-    postcss: [
-        require('autoprefixer')
-    ]
+    }
 };
