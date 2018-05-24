@@ -1,19 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Router, Route,  hashHistory} from 'react-router';
 
-class App extends React.Component{
-    constructor() {
-        super();
-        this.state = {
-        };
-    }
-    syncProfile() {
+class App extends Component {
 
-    }
     render() {
         return (
             <div className="container">
-                {React.cloneElement(this.props.children, this.state)}
+               zzzzzzzzzzzzzzzzzzzzzzzzzzzz
             </div>
         );
     }
