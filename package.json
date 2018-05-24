@@ -18,10 +18,10 @@
   },
   "dependencies": {
     "pubsub-js": "^1.5.4",
-    "react": "^15.0.2",
-    "react-dom": "^15.0.2",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
     "react-hot-loader": "^3.0.0-beta.2",
-    "react-router": "^2.0.0"
+    "react-router": "^2.7.0"
   },
   "devDependencies": {
     "antd": "^3.5.3",
@@ -39,8 +39,8 @@
     "less": "^2.6.0",
     "less-loader": "^2.2.2",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.0",
-    "webpack-dev-server": "^1.14.1",
+    "webpack": "^2.7.0",
+    "webpack-dev-server": "^2.5.1",
     "babel-polyfill": "^6.20.0"
   }
 }

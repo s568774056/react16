@@ -1,34 +1,52 @@
-
-.panelADiv{
+.panelADiv {
   background: #ffffff;
+  border-bottom: 1px solid #e8e9ed;
   padding: 8px;
-  .label{
+  .label {
     display: inline-block;
-    width: 25%;
+    width: 25% !important;
   }
-  .inputDiv{
+
+  input {
+    border: 0px;
+    outline: none;
+    cursor: pointer;
+    width: 100% !important;
+  }
+
+  .datePickerDiv, .inputDiv, .cascadeDiv, .selectDiv, .searchSltDiv, .switchDiv, .radioDiv {
     display: inline-block;
     margin-left: 2px;
-    width: 70%;
-    input{
+    width: 70% !important;
+  }
 
-      border: 0px;outline:none;cursor: pointer;
-    }
-  }
-  .cascadeDiv{
-    display: inline-block;
-    width: 70%;
-    //float: right;
-    .ant-cascader-picker{
-      width: 100%;
-      input{
-        border: 0px;outline:none;cursor: pointer;
-      }
-    }
-  }
-  .top{display: inline-block;
-    .ant-cascader-menus{
+  .cascadeDiv {
+    .ant-cascader-menus {
       left: 0px !important;
     }
+    .ant-cascader-picker {
+      width: 100% !important;
+    }
+  }
+
+  .searchSltDiv {
+    .ant-select-selection {
+      border: 0px
+    }
+
+    .ant-select {
+      width: 100% !important;
+    }
+  }
+
+  .datePickerDiv {
+    .ant-calendar-picker {
+
+      width: 100% !important;
+    }
+
+  }
+  .switchDiv{
+    padding-left: 8px;
   }
 }

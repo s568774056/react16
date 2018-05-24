@@ -61,12 +61,12 @@ module.exports = {
                 }
             },
             {
-                test: /\.json?$/,
-                loader: 'json'
+                test: /\.json$/,
+                loader: 'json-loader'
             },
             {
                 test: /\.css$/,
-                loader: "style!css"
+                loader: "style-loader!css-loader"
             },
             {
                 test: /\.less/,
