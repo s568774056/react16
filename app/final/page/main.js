@@ -6,7 +6,8 @@ class Main extends React.Component{
     render() {
         return (
             <div className="main-list">
-                <Link to="/apply"><Button type="primary">我的zz私人音乐坊</Button></Link>
+                <Link to="/payApply"><Button type="primary">我的zz私人音乐坊</Button></Link>
+                <Link to="/paySelect"><Button type="primary">我的zz私人音乐坊</Button></Link>
             </div>
         );
     }

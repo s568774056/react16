@@ -1,9 +1,10 @@
 import React from 'react';
-import { Icon,Cascader,Select,DatePicker,Radio,Switch   } from 'antd';
+import { Icon,Cascader,Select,DatePicker,Radio,Switch} from 'antd';
 const Option = Select.Option;
 const RadioGroup = Radio.Group;
+const { MonthPicker, RangePicker } = DatePicker;
 
-class panelA extends React.Component{
+class PanelA extends React.Component{
 
     constructor() {
         super();
@@ -36,6 +37,48 @@ class panelA extends React.Component{
     onChange(value) {
         console.log(value);
     }
+
+
+
+
+     range(start, end) {
+        const result = [];
+        for (let i = start; i < end; i++) {
+            result.push(i);
+        }
+        return result;
+    }
+
+     disabledDate(current) {
+        // Can not select days before today and today
+        return current && current < moment().endOf('day');
+    }
+
+     disabledDateTime() {
+        return {
+            disabledHours: () => range(0, 24).splice(4, 20),
+            disabledMinutes: () => range(30, 60),
+            disabledSeconds: () => [55, 56],
+        };
+    }
+
+     disabledRangeTime(_, type) {
+        if (type === 'start') {
+            return {
+                disabledHours: () => range(0, 60).splice(4, 20),
+                disabledMinutes: () => range(30, 60),
+                disabledSeconds: () => [55, 56],
+            };
+        }
+        return {
+            disabledHours: () => range(0, 60).splice(20, 4),
+            disabledMinutes: () => range(0, 31),
+            disabledSeconds: () => [55, 56],
+        };
+    }
+
+
+
 
     //进行选择
      getInput(type){
@@ -98,4 +141,7 @@ class panelA extends React.Component{
     }
 }
 
-export default panelA ;
+PanelA.defaultProps={
+    label:""
+};
+export default PanelA ;
