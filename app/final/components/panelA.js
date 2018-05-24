@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PubSub from 'pubsub-js';
 import { Icon,Cascader,Select,DatePicker,Radio,Switch} from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
@@ -7,7 +8,6 @@ moment.locale('zh-cn');
 const Option = Select.Option;
 const RadioGroup = Radio.Group;
 const { MonthPicker, RangePicker } = DatePicker;
-import PubSub from 'pubsub-js';
 
 const localeLg =
     {
@@ -32,10 +32,12 @@ const localeLg =
             "placeholder": "Select time"
         }
     };
-class PanelA extends React.Component{
+
+
+class PanelA extends Component{
 
     constructor() {
-        super();this.test();
+        super();
         this.optionA = [{
             value: '12',
             label: 'Zhejiang',
@@ -59,30 +61,28 @@ class PanelA extends React.Component{
                 }],
             }],
         }];
-
     }
 
 
-    test=()=>{
 
-        PubSub.subscribe("PLAAA",this.testzz);
-        // Pubsub.unsubscriber("PLAAA");
-
-    }
-    testzz(){
-        console.log("..333333333...........");
-
-    }
+    /*PubSub.subscribe("PLAAA",this.testzz);//处理事件
+    Pubsub.unsubscriber("PLAAA");//解绑*/
 
     onChange(value) {
         console.log(value);
     }
+    verifyInputDiv=(msg,data)=>{
+        console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"+data);
+        data="xzxzxzxzxz";
+    }
 
     //进行选择
      getInput(type){
+         PubSub.subscribe(this.props.fnName,this.verifyInputDiv);//处理事件
         switch(type)
         {
             case 'A'://普通输入框
+               // console.log(this.props.fnName);
                 return  <div className="inputDiv"><input type="text" placeholder=""/></div>;
                 break;
             case 'B'://级联选择框

@@ -24,4 +24,13 @@ class AppRouter extends Component {
     }
 }
 
+
+/*
+
+import PubSub from 'pubsub-js';
+ PubSub.publish('PLAAA');//发布事件
+  PubSub.subscribe("PLAAA",this.testzz);//处理事件
+  Pubsub.unsubscriber("PLAAA");//解绑
+*/
+
 export default AppRouter;
