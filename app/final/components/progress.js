@@ -1,5 +1,5 @@
 import React from 'react';
-require('./progress.less');
+require('./app.less');
 
 let Progress = React.createClass({
 	getDefaultProps() {

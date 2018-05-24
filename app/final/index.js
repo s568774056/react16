@@ -2,6 +2,8 @@ import React from 'react';
 import Route from './route';
 import 'babel-polyfill';
 import ReactDOM from 'react-dom';
+import './index.less';
+
 ReactDOM.render(
         <Route />,
     document.getElementById('root')
