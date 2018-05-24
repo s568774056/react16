@@ -6,6 +6,10 @@ import PayApply from './page/payApply';
 import PaySelect from './page/paySelect';
 
 class AppRouter extends Component {
+
+    constructor() {
+        super();
+    }
     render() {
         return (
 			<Router history={hashHistory}>

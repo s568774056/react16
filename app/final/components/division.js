@@ -6,6 +6,9 @@ class Division extends Component {
         super(props, context);
         props.height="8px";
     }*/
+    static defaultProps={
+        height:"8px"
+    };
 
     render() {
         return (
@@ -13,9 +16,6 @@ class Division extends Component {
         );
     }
 }
-Division.defaultProps={
-    height:"8px"
-};
 
 
 export default Division ;

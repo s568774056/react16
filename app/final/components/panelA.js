@@ -1,13 +1,41 @@
 import React from 'react';
 import { Icon,Cascader,Select,DatePicker,Radio,Switch} from 'antd';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+moment.locale('zh-cn');
+
 const Option = Select.Option;
 const RadioGroup = Radio.Group;
 const { MonthPicker, RangePicker } = DatePicker;
+import PubSub from 'pubsub-js';
 
+const localeLg =
+    {
+        "lang": {
+            "today": "今天",
+            "now": "今天",
+            "month": "Month",
+            "year": "Year",
+            "monthSelect": "选择月份",
+            "yearSelect": "选择年份",
+            "yearFormat": "YYYY",
+            "dateFormat": "M/D/YYYY",
+            "dayFormat": "D",
+            "monthBeforeYear": true,
+            "previousMonth": "上个月",
+            "nextMonth": "下个月",
+            "previousYear": "上一年",
+            "nextYear": "下一年",
+            "May":"五月"
+        },
+        "timePickerLocale": {
+            "placeholder": "Select time"
+        }
+    };
 class PanelA extends React.Component{
 
     constructor() {
-        super();
+        super();this.test();
         this.optionA = [{
             value: '12',
             label: 'Zhejiang',
@@ -34,12 +62,21 @@ class PanelA extends React.Component{
 
     }
 
+
+    test=()=>{
+
+        PubSub.subscribe("PLAAA",this.testzz);
+        // Pubsub.unsubscriber("PLAAA");
+
+    }
+    testzz(){
+        console.log("..333333333...........");
+
+    }
+
     onChange(value) {
         console.log(value);
     }
-ss=()=>{
-
-}
 
     //进行选择
      getInput(type){
@@ -71,7 +108,7 @@ ss=()=>{
                          </div>;
                 break;
             case 'E'://日期选择框
-                return  <div className="datePickerDiv"><DatePicker /></div>;
+                return  <div className="datePickerDiv"><DatePicker locale={localeLg} format="YYYY-MM-DD" /></div>;
                 break;
             case 'F'://单选
                 return <div className="radioDiv">

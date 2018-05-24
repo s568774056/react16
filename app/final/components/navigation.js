@@ -4,7 +4,7 @@ require('./navigation.less');
  class Navigation extends React.Component{
     render() {
         return (
-            <div>
+            <div className="navigationDiv">
                 <div className="row navigation">
                     <h1 className="caption">{this.props.title}</h1>
                 </div>
