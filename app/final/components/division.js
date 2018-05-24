@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 //分割条
-class Division extends React.Component{
+class Division extends Component {
 
  /*   constructor(props, context) {
         super(props, context);
