@@ -54,7 +54,7 @@ module.exports = {
               loader: "babel-loader",
               query:
                 {
-                  presets:['react','es2015'],
+                  presets:['react','es2015', 'stage-0'],
                     //antd按需引入 缺少会造成样式缺失
                     cacheDirectory: true,
                     plugins: [["import", { libraryName: "antd", style: "css" }]]

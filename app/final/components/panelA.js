@@ -37,7 +37,9 @@ class PanelA extends React.Component{
     onChange(value) {
         console.log(value);
     }
+ss=()=>{
 
+}
 
     //进行选择
      getInput(type){
