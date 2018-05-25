@@ -1,5 +1,5 @@
 import React from 'react';
-import PanelA from '../components/panelA';
+import InputA from '../components/inputA';
 import Division from '../components/division';
 
  class PaySelect extends React.Component{
@@ -8,12 +8,12 @@ import Division from '../components/division';
         return (
            <div>
                <Division/>
-               <PanelA label="身份证号码" type="A"/>
+               <InputA label="身份证号码" type="A"/>
                <Division/>
-               <PanelA label="住院地址" type="B"/>
-               <PanelA label="医院" type="D"/>
-               <PanelA label="住院日期" type="E"/>
-               <PanelA label="&nbsp;&nbsp;&nbsp;至" type="E"/>
+               <InputA label="住院地址" type="B"/>
+               <InputA label="医院" type="D"/>
+               <InputA label="住院日期" type="E"/>
+               <InputA label="&nbsp;&nbsp;&nbsp;至" type="E"/>
                <Division/>
            </div>
         );

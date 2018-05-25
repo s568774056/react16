@@ -34,7 +34,7 @@ const localeLg =
     };
 
 
-class PanelA extends Component{
+class InputA extends Component{
 
     constructor(props) {
         super(props);
@@ -126,7 +126,7 @@ class PanelA extends Component{
 
     render() {
         return (
-            <div className="panelADiv">
+            <div className="inputADiv">
                 <div className="label">{this.props.label}</div>
                 {this.getInput(this.props.type)}
             </div>
@@ -134,4 +134,4 @@ class PanelA extends Component{
     }
 }
 
-export default PanelA ;
+export default InputA ;
