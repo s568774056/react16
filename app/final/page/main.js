@@ -5,9 +5,9 @@ import { Button } from 'antd';
 class Main extends Component {
     render() {
         return (
-            <div className="main-list">
-                <Link to="/payApply"><Button type="primary">我的zz私人音乐坊</Button></Link>
-                <Link to="/paySelect"><Button type="primary">我的zz私人音乐坊</Button></Link>
+            <div className="mainDiv">
+                <Link to="/payApply"><div className="center"><Button type="primary">直赔申请</Button></div></Link>
+                <Link to="/paySelect"><div className="center"><Button type="primary">直赔查询</Button></div></Link>
             </div>
         );
     }

@@ -1,90 +1,105 @@
-.center{
-  text-align: center;
-}
-.main-list {
-  width: 70%;
-  .main-item {
-    margin: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+body {
+  .center {
     text-align: center;
-    .main-body {
-      padding: 10px;
+  }
+  .panelA {
+    background: #ffffff;
+    border-bottom: 1px solid #e8e9ed;
+  }
+  .mainDiv {
+    button{
+      width:60%;
+      margin: 5px;
     }
   }
-}
-.inputADiv {
-  background: #ffffff;
-  border-bottom: 1px solid #e8e9ed;
-  padding: 8px;
-  .label {
-    display: inline-block;
-    width: 25% !important;
-  }
-
-  input {
-    border: 0px;
-    outline: none;
-    cursor: pointer;
-    width: 100% !important;
-  }
-
-  .datePickerDiv, .inputDiv, .cascadeDiv, .selectDiv, .searchSltDiv, .switchDiv, .radioDiv {
-    display: inline-block;
-    margin-left: 2px;
-    width: 70% !important;
-  }
-
-  .cascadeDiv {
-    .ant-cascader-menus {
-      left: 0px !important;
+  .inputADiv {
+    background: #ffffff;
+    border-bottom: 1px solid #e8e9ed;
+    padding: 12px;
+    .label {
+      display: inline-block;
+      width: 25% !important;
     }
-    .ant-cascader-picker {
+
+    input {
+      border: 0px;
+      outline: none;
+      cursor: pointer;
       width: 100% !important;
     }
-  }
 
-  .searchSltDiv {
-    .ant-select-selection {
-      border: 0px
+    .datePickerDiv, .inputDiv, .cascadeDiv, .selectDiv, .searchSltDiv, .switchDiv, .radioDiv {
+      display: inline-block;
+      margin-left: 2px;
+      width: 70% !important;
     }
 
-    .ant-select {
-      width: 100% !important;
+    .cascadeDiv {
+      .ant-cascader-menus {
+        left: 0px !important;
+      }
+      .ant-cascader-picker {
+        width: 100% !important;
+      }
     }
-  }
 
-  .datePickerDiv {
-    .ant-calendar-picker {
+    .searchSltDiv {
+      .ant-select-selection {
+        border: 0px
+      }
 
-      width: 100% !important;
+      .ant-select {
+        width: 100% !important;
+      }
     }
-    .ant-calendar-picker-icon{
-      right: 9px !important;
-    }
-  }
-  .switchDiv{
-    padding-left: 8px;
-  }
-}
 
-.navigationDiv {
-  .navigation {
-    box-sizing: border-box;
-    padding: 15px 25px;
-    border-bottom: 1px solid #ccc;
-    background: white;
-    width: 100%;
-    height: 30px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    .caption {
-      font-size: 10px;
-      text-indent: 20px;
+    .datePickerDiv {
+      .ant-calendar-picker {
+
+        width: 100% !important;
+      }
+      .ant-calendar-picker-icon {
+        right: 9px !important;
+      }
+    }
+    .switchDiv {
+      padding-left: 8px;
     }
   }
 
-  .row-navigation {
-    height: 30px;
+  .navigationDiv {
+    .navigation {
+      box-sizing: border-box;
+      padding: 15px 25px;
+      border-bottom: 1px solid #ccc;
+      background: white;
+      width: 100%;
+      height: 30px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      .caption {
+        font-size: 10px;
+        text-indent: 20px;
+      }
+    }
+
+    .row-navigation {
+      height: 30px;
+    }
+  }
+
+  .payList {
+    .panelA {
+      padding: 5px;
+      padding-left: 20px !important;
+      label:nth-child(1) {
+        display: inline-block;
+        width: 25% !important;
+      }
+    }
+    .panelA div {
+
+    }
   }
 }

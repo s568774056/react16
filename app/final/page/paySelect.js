@@ -17,7 +17,7 @@ import { Button} from 'antd';
                <InputA label="住院日期" type="E"/>
                <InputA label="&nbsp;&nbsp;&nbsp;至" type="E"/>
                <Division height="45px"/>
-               <div className="center"><Link to="/payList"><Button type="primary" style={{width:"80%",padding:"5px"}}>查询</Button></Link></div>
+               <div className="center"><Link to="/payList"><Button type="primary" style={{width:"80%",padding:"5px",fontSize:"15px"}}>查询</Button></Link></div>
 
            </div>
         );

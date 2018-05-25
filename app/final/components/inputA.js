@@ -40,24 +40,24 @@ class InputA extends Component{
         super(props);
         this.optionA = [{
             value: '12',
-            label: 'Zhejiang',
+            label: '河南',
             children: [{
                 value: '13',
-                label: 'Hangzhou',
+                label: '漯河',
                 children: [{
                     value: '232',
-                    label: 'West Lake',
+                    label: '临颍',
                 }],
             }],
         }, {
             value: '14',
-            label: 'Jiangsu',
+            label: '浙江',
             children: [{
                 value: '21',
-                label: 'Nanjing',
+                label: '坤州',
                 children: [{
                     value: '53',
-                    label: 'Zhong Hua Men',
+                    label: '皮革厂',
                 }],
             }],
         }];
@@ -68,42 +68,52 @@ class InputA extends Component{
     /*PubSub.subscribe("PLAAA",this.testzz);//处理事件
     Pubsub.unsubscriber("PLAAA");//解绑*/
 
-    onChange(event) {
-        this.props.callBack(event.target.value);
+    inputChange(event) {//普通输入框
+        this.props.callBack(event.target.value.trim());
+    }
+
+    switchChange(val) {//开关按钮
+        this.props.callBack(val);
+    }
+
+    datePickerChange(val,date) {//日期选择框
+        this.props.callBack(date.trim());
     }
 
     //进行选择
      getInput(type){
-
         switch(type)
         {
             case 'A'://普通输入框
-                return  <div className="inputDiv"><Input  type="text" placeholder="" onChange={this.onChange.bind(this)}/></div>;
+                return  <div className="inputDiv"><Input  type="text" placeholder="" onChange={this.inputChange.bind(this)}/></div>;
                 break;
             case 'B'://级联选择框
                 return  <div className="cascadeDiv" > <Cascader options={this.optionA} placeholder="请选择" changeOnSelect="true" getPopupContainer={()=>document.querySelector('.cascadeDiv')}/></div>;
                 break;
             case 'C'://普通选择框
                 return <div className="selectDiv">
-                    <Select defaultValue="lucy" style={{width: 120}}>
+                    <Select  style={{width: 120}} notFoundContent="暂无数据" >
                         <Option value="lucy">Lucy</Option>
                     </Select>
                 </div>;
                 break;
             case 'D'://可对选项进行搜索的选择框
                 return  <div className="searchSltDiv">
-                                <Select defaultValue="lucy" showSearch
-                                        style={{width: 200}}
-                                        placeholder="Select a person"
-                                        optionFilterProp="children"
-                                        filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}>
-                                    <Option value="lucy">中国</Option>
-                                    <Option value="cc">德国</Option>
-                                </Select>
+                            <Select
+                                showSearch
+                                style={{ width: 200 }}
+                                placeholder="请选择"
+                                optionFilterProp="children"
+                                filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+                            >
+                                <Option value="jack">中山医院</Option>
+                                <Option value="lucy">热岛山医院</Option>
+                                <Option value="tom">空岛山医院</Option>
+                            </Select>
                          </div>;
                 break;
             case 'E'://日期选择框
-                return  <div className="datePickerDiv"><DatePicker locale={localeLg} format="YYYY-MM-DD" /></div>;
+                return  <div className="datePickerDiv"><DatePicker locale={localeLg} format="YYYY-MM-DD"  onChange={this.datePickerChange.bind(this)}/></div>;
                 break;
             case 'F'://单选
                 return <div className="radioDiv">
@@ -117,7 +127,7 @@ class InputA extends Component{
                 return  <div className="datePickerDiv"><DatePicker /></div>;
                 break;
             case 'H'://开关按钮
-                return  <div className="switchDiv"><Switch checkedChildren="是" unCheckedChildren="否"/></div>;
+                return  <div className="switchDiv"><Switch checkedChildren="是" unCheckedChildren="否" onChange={this.switchChange.bind(this)}/></div>;
                 break;
             default:
                 return  <div className="select"><Icon type="api" style={{color: '#08c' }} /></div>;
