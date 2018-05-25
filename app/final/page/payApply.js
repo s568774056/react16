@@ -2,7 +2,6 @@ import React, { Component }  from 'react';
 import InputA from '../components/inputA';
 import Division from '../components/division';
 import { Button} from 'antd';
-
 import { Input  } from 'antd';
 const Search = Input.Search;
 class PayApply extends Component{

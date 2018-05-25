@@ -4,6 +4,7 @@ import App from './page/app';
 import Main from './page/main';
 import PayApply from './page/payApply';
 import PaySelect from './page/paySelect';
+import PayList from './page/payList';
 
 class AppRouter extends Component {
 
@@ -16,8 +17,8 @@ class AppRouter extends Component {
 				<Route path="/" component={App}>
 					<IndexRoute component={Main}/>
 					<Route path="/payApply" component={PayApply}/>
-
 					<Route path="/paySelect" component={PaySelect}/>
+                    <Route path="/payList" component={PayList}/>
 				</Route>
 			</Router>
         );

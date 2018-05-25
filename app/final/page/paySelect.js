@@ -1,6 +1,8 @@
 import React from 'react';
 import InputA from '../components/inputA';
 import Division from '../components/division';
+import { Link } from 'react-router';
+import { Button} from 'antd';
 
  class PaySelect extends React.Component{
 
@@ -14,7 +16,9 @@ import Division from '../components/division';
                <InputA label="医院" type="D"/>
                <InputA label="住院日期" type="E"/>
                <InputA label="&nbsp;&nbsp;&nbsp;至" type="E"/>
-               <Division/>
+               <Division height="45px"/>
+               <div className="center"><Link to="/payList"><Button type="primary" style={{width:"80%",padding:"5px"}}>查询</Button></Link></div>
+
            </div>
         );
     }
