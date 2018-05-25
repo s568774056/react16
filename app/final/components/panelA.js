@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PubSub from 'pubsub-js';
-import { Icon,Cascader,Select,DatePicker,Radio,Switch} from 'antd';
+import { Icon,Cascader,Select,DatePicker,Radio,Switch,Input } from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
 moment.locale('zh-cn');
@@ -36,8 +36,8 @@ const localeLg =
 
 class PanelA extends Component{
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.optionA = [{
             value: '12',
             label: 'Zhejiang',
@@ -68,22 +68,17 @@ class PanelA extends Component{
     /*PubSub.subscribe("PLAAA",this.testzz);//处理事件
     Pubsub.unsubscriber("PLAAA");//解绑*/
 
-    onChange(value) {
-        console.log(value);
-    }
-    verifyInputDiv=(msg,data)=>{
-        console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"+data);
-        data="xzxzxzxzxz";
+    onChange(event) {
+        this.props.callBack(event.target.value);
     }
 
     //进行选择
      getInput(type){
-         PubSub.subscribe(this.props.fnName,this.verifyInputDiv);//处理事件
+
         switch(type)
         {
             case 'A'://普通输入框
-               // console.log(this.props.fnName);
-                return  <div className="inputDiv"><input type="text" placeholder=""/></div>;
+                return  <div className="inputDiv"><Input  type="text" placeholder="" onChange={this.onChange.bind(this)}/></div>;
                 break;
             case 'B'://级联选择框
                 return  <div className="cascadeDiv" > <Cascader options={this.optionA} placeholder="请选择" changeOnSelect="true" getPopupContainer={()=>document.querySelector('.cascadeDiv')}/></div>;
